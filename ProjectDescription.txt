@@ -1,0 +1,1 @@
+a date calculator, which can take a number as input representing the days ahead of today and ouput the date of that day.
