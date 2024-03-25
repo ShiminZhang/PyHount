@@ -1,0 +1,3482 @@
+[
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "bAllowStrafe",
+        "Type": "uint32:  1",
+        "Description": "Is strafing allowed during movement?"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "Blackboard",
+        "Type": "UBlackboardComponent",
+        "Description": "Blackboard"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "bLOSflag",
+        "Type": "uint32:  1",
+        "Description": "Used for alternating LineOfSight traces"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "BrainComponent",
+        "Type": "UBrainComponent",
+        "Description": "Component responsible for behaviors."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "bSetControlRotationFromPawnOrientation",
+        "Type": "uint32: 1",
+        "Description": "Copy Pawn rotation to ControlRotation, if there is no focus point."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "bSkipExtraLOSChecks",
+        "Type": "uint32:  1",
+        "Description": "Skip extra line of sight traces to extremities of target being checked."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "bStartAILogicOnPossess",
+        "Type": "uint32:  1",
+        "Description": "By default AI's logic does not start when controlled Pawn is possessed."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "bStopAILogicOnUnposses",
+        "Type": "uint32:  1",
+        "Description": "By default AI's logic gets stopped when controlled Pawn is unpossessed."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "bWantsPlayerState",
+        "Type": "uint32:  1",
+        "Description": "Specifies if this AI wants its own PlayerState."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "CachedGameplayTasksComponent",
+        "Type": "UGameplayTasksComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "DefaultNavigationFilterClass",
+        "Type": "TSubclassOf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "FocusInformation",
+        "Type": "FFocusKnowledge",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "PerceptionComponent",
+        "Type": "UAIPerceptionComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "ReceiveMoveCompleted",
+        "Type": "FAIMoveCompletedSignature",
+        "Description": "Blueprint notification that we've completed the current movement request"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "ActorsPerceptionUpdated(const TArray< AActor* >& Upda...)",
+        "Type": "void",
+        "Description": "Notifies AIController of changes in given actors' perception"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "AreAIIgnoringPlayers()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "BuildPathfindingQuery(const FAIMoveRequest& MoveRequest,FPathFindingQuery& Query)",
+        "Type": "bool",
+        "Description": "Helper function for creating pathfinding query for this agent from move request data"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "ClaimTaskResource(TSubclassOf< UGameplayTaskResource ...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "ClearFocus(EAIFocusPriority::Type InPriority)",
+        "Type": "void",
+        "Description": "Clears Focus for given priority, will also clear FocalPoint as a result"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "FindPathForMoveRequest(const FAIMoveRequest& MoveRequest,FPathFindingQuery& Query,FNavPathSharedPtr& OutPath)",
+        "Type": "void",
+        "Description": "Finds path for given move request"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetActionsComp()",
+        "Type": "UPawnActionsComponent",
+        "Description": "Returns ActionsComp subobject"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetAIPerceptionComponent()",
+        "Type": "UAIPerceptionComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetAIPerceptionComponent()",
+        "Type": "UAIPerceptionComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetBlackboardComponent()",
+        "Type": "UBlackboardComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetBlackboardComponent()",
+        "Type": "UBlackboardComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetBrainComponent()",
+        "Type": "UBrainComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetCurrentMoveRequestID()",
+        "Type": "FAIRequestID",
+        "Description": "Returns the Move Request ID for the current move"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetDebugIcon()",
+        "Type": "FString",
+        "Description": "Debug/dev-time"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetDefaultNavigationFilterClass()",
+        "Type": "TSubclassOf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetFocalPoint()",
+        "Type": "FVector",
+        "Description": "Retrieve the final position that controller should be looking at."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetFocalPointForPriority(EAIFocusPriority::Type InPriority)",
+        "Type": "FVector",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetFocalPointOnActor(const AActor* Actor)",
+        "Type": "FVector",
+        "Description": "Retrieve the focal point this controller should focus to on given actor."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetFocusActor()",
+        "Type": "AActor *",
+        "Description": "Get the focused actor."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetFocusActorForPriority(EAIFocusPriority::Type InPriority)",
+        "Type": "AActor *",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetGameplayTasksComponent()",
+        "Type": "UGameplayTasksComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetImmediateMoveDestination()",
+        "Type": "FVector",
+        "Description": "Returns position of current path segment's end."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetMoveStatus()",
+        "Type": "EPathFollowingStatus::Type",
+        "Description": "Returns status of path following"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetPathFollowingComponent()",
+        "Type": "UPathFollowingComponent",
+        "Description": "Returns PathFollowingComponent subobject"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "HasPartialPath()",
+        "Type": "bool",
+        "Description": "Returns true if the current PathFollowingComponent's path is partial (does not reach desired destination)."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "InitializeBlackboard(UBlackboardComponent& BlackboardCo...,UBlackboardData& BlackboardAsset)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "K2_ClearFocus()",
+        "Type": "void",
+        "Description": "Clears Focus, will also clear FocalPoint as a result"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "K2_SetFocalPoint(FVector FP)",
+        "Type": "void",
+        "Description": "Set the position that controller should be looking at."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "K2_SetFocus(AActor* NewFocus)",
+        "Type": "void",
+        "Description": "Set Focus for actor, will set FocalPoint as a result."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "LineOfSightTo(const AActor* Other,FVector ViewPoint,bool bAlternateChecks)",
+        "Type": "bool",
+        "Description": "Checks line to center and top of other actor"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "MoveTo(const FAIMoveRequest& MoveRequest,FNavPathSharedPtr* OutPath)",
+        "Type": "FPathFollowingRequestResult",
+        "Description": "Makes AI go toward specified destination"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "MoveToActor(AActor* Goal,float AcceptanceRadius,bool bStopOnOverlap,bool bUsePathfinding,bool bCanStrafe,TSubclassOf< UNavigationQueryFilter...,bool bAllowPartialPath)",
+        "Type": "EPathFollowingRequestResult::Type",
+        "Description": "Makes AI go toward specified Goal actor (destination will be continuously updated), aborts any active path following"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "MoveToLocation(const FVector& Dest,float AcceptanceRadius,bool bStopOnOverlap,bool bUsePathfinding,bool bProjectDestinationToNavigatio...,bool bCanStrafe,TSubclassOf< UNavigationQueryFilter...,bool bAllowPartialPath)",
+        "Type": "EPathFollowingRequestResult::Type",
+        "Description": "Makes AI go toward specified Dest location, aborts any active path following"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnGameplayTaskResourcesClaimed(FGameplayResourceSet NewlyClaimed,FGameplayResourceSet FreshlyRelease...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnMoveCompleted(FAIRequestID RequestID,EPathFollowingResult::Type Result)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnMoveCompleted(FAIRequestID RequestID,const FPathFollowingResult& Result)",
+        "Type": "void",
+        "Description": "Called on completing current movement request"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnUsingBlackBoard(UBlackboardComponent* Blackboa...,UBlackboardData* BlackboardAss...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "PauseMove(FAIRequestID RequestToPause)",
+        "Type": "bool",
+        "Description": "If AI is currently moving due to request given by RequestToPause, then the move will be paused"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "PerformAction(UPawnAction& Action,EAIRequestPriority::Type Priority,UObject*const Instigator)",
+        "Type": "bool",
+        "Description": "Actions."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "PreparePathfinding(const FAIMoveRequest& MoveRequest,FPathFindingQuery& Query)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "RequestMove(const FAIMoveRequest& MoveRequest,FNavPathSharedPtr Path)",
+        "Type": "FAIRequestID",
+        "Description": "Passes move request and path object to path following"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "RequestPathAndMove(const FAIMoveRequest& MoveRequest,FPathFindingQuery& Query)",
+        "Type": "FAIRequestID",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "ResumeMove(FAIRequestID RequestToResume)",
+        "Type": "bool",
+        "Description": "Resumes last AI-performed, paused request provided it's ID was equivalent to RequestToResume"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "RunBehaviorTree(UBehaviorTree* BTAsset)",
+        "Type": "bool",
+        "Description": "Starts executing behavior tree."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "SetFocalPoint(FVector NewFocus,EAIFocusPriority::Type InPriority)",
+        "Type": "void",
+        "Description": "Set FocalPoint for given priority as absolute position or offset from base."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "SetFocus(AActor* NewFocus,EAIFocusPriority::Type InPriority)",
+        "Type": "void",
+        "Description": "Set Focus actor for given priority, will set FocalPoint as a result."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "SetMoveBlockDetection(bool bEnable)",
+        "Type": "void",
+        "Description": "Updates state of movement block detection."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "SetPathFollowingComponent(UPathFollowingComponent* NewPF...)",
+        "Type": "void",
+        "Description": "That his function does not do any pathfollowing state transfer."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "SetPerceptionComponent(UAIPerceptionComponent& InPercepti...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "ShouldSyncBlackboardWith(const UBlackboardComponent& OtherB...)",
+        "Type": "bool",
+        "Description": "Does this AIController allow given UBlackboardComponent sync data with it"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "SuggestTossVelocity(FVector& OutTossVelocity,FVector Start,FVector End,float TossSpeed,bool bPreferHighArc,float CollisionRadius,bool bOnlyTraceUp)",
+        "Type": "bool",
+        "Description": "Computes a launch velocity vector to toss a projectile and hit the given destination."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "ToggleAIIgnorePlayers()",
+        "Type": "void",
+        "Description": "Cheat/debugging functions."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "UnclaimTaskResource(TSubclassOf< UGameplayTaskResource ...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "UpdateControlRotation(float DeltaTime,bool bUpdatePawn)",
+        "Type": "void",
+        "Description": "Update direction AI is looking based on FocalPoint"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "UseBlackboard(UBlackboardData* BlackboardAss...,UBlackboardComponent*& Blackbo...)",
+        "Type": "bool",
+        "Description": "Makes AI use the specified Blackboard asset & creates a Blackboard Component if one does not already exist."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "DisplayDebug(UCanvas* Canvas,const FDebugDisplayInfo& DebugDisp...,float& YL,float& YPos)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnPossess(APawn* InPawn)",
+        "Type": "void",
+        "Description": "Overridable native function for when this controller is asked to possess a pawn."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnUnPossess()",
+        "Type": "void",
+        "Description": "Overridable native function for when this controller unpossesses its pawn."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "SetPawn(APawn* InPawn)",
+        "Type": "void",
+        "Description": "Setter for Pawn. Normally should only be used internally when possessing/unpossessing a Pawn."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "StopMovement()",
+        "Type": "void",
+        "Description": "Aborts the move the controller is currently performing"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "PostInitializeComponents()",
+        "Type": "void",
+        "Description": "Overridden to create the player replication info and perform other mundane initialization tasks."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "PostRegisterAllComponents()",
+        "Type": "void",
+        "Description": "Called after all the components in the Components array are registered, called both in editor and during gameplay"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "Reset()",
+        "Type": "void",
+        "Description": "Reset actor to initial state - used when restarting level without reloading."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "Tick(float DeltaSeconds)",
+        "Type": "void",
+        "Description": "Function called every frame on this Actor."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetPathFollowingAgent()",
+        "Type": "IPathFollowingAgentInterface",
+        "Description": "Retrieves PathFollowingAgent for this NavAgent"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "IsFollowingAPath()",
+        "Type": "bool",
+        "Description": "Checks if the agent is actively following a navigation path"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "ShouldPostponePathUpdates()",
+        "Type": "bool",
+        "Description": "Allows delaying repath requests"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetPerceptionComponent()",
+        "Type": "UAIPerceptionComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetGameplayTaskAvatar(const UGameplayTask* Task)",
+        "Type": "AActor *",
+        "Description": "Get \"body\" of task's owner / default, having location in world (e.g. Owner = AIController, Avatar = Pawn)"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetGameplayTaskDefaultPriority()",
+        "Type": "uint8",
+        "Description": "Get default priority for running a task"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetGameplayTaskOwner(const UGameplayTask* Task)",
+        "Type": "AActor *",
+        "Description": "Get owner of a task or default one when task is null"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetGameplayTasksComponent(const UGameplayTask& Task)",
+        "Type": "UGameplayTasksComponent",
+        "Description": "Finds tasks component for given GameplayTask, Task.GetGameplayTasksComponent() may not be initialized at this point!"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnGameplayTaskActivated(UGameplayTask& Task)",
+        "Type": "void",
+        "Description": "Notify called after GameplayTask changes state to Active (initial activation or resuming)"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnGameplayTaskDeactivated(UGameplayTask& Task)",
+        "Type": "void",
+        "Description": "Notify called after GameplayTask changes state from Active (finishing or pausing)"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "OnGameplayTaskInitialized(UGameplayTask& Task)",
+        "Type": "void",
+        "Description": "Add empty overrides to fix linker errors if project implements a child class without adding GameplayTasks module dependency"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GetGenericTeamId()",
+        "Type": "FGenericTeamId",
+        "Description": "Retrieve team identifier in form of FGenericTeamId"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "SetGenericTeamId(const FGenericTeamId& TeamID)",
+        "Type": "void",
+        "Description": "Assigns Team Agent to given TeamID"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nAAIController\n",
+        "Name": "GrabDebugSnapshot(FVisualLogEntry* Snapshot)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIBasicCounter\n",
+        "Name": "NextAvailableID",
+        "Type": "Type",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIBasicCounter\n",
+        "Name": "GetNextAvailableID()",
+        "Type": "Type",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIBasicCounter\n",
+        "Name": "GetSize()",
+        "Type": "uint32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIBasicCounter\n",
+        "Name": "OnIndexForced(Type ForcedIndex)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIGenericID\n",
+        "Name": "Index",
+        "Type": "const TCounter:...",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIGenericID\n",
+        "Name": "GetCounter()",
+        "Type": "TCounter &",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIGenericID\n",
+        "Name": "GetNextID()",
+        "Type": "FAIGenericID",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIGenericID\n",
+        "Name": "GetSize()",
+        "Type": "uint32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIGenericID\n",
+        "Name": "InvalidID()",
+        "Type": "FAIGenericID",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIGenericID\n",
+        "Name": "IsValid()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIGenericID\n",
+        "Name": "operator typename TCounter::Type()",
+        "Type": "",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIGenericID\n",
+        "Name": "operator=(const FAIGenericID& Other)",
+        "Type": "FAIGenericID",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "MessageFlags",
+        "Type": "uint8",
+        "Description": "Message param: custom flags"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "MessageName",
+        "Type": "FName",
+        "Description": "Type of message"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "RequestID",
+        "Type": "FAIRequestID",
+        "Description": "Message param: ID"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "Sender",
+        "Type": "FWeakObjectPtr",
+        "Description": "Message source"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "Status",
+        "Type": "TEnumAsByte",
+        "Description": "Message param: status"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "Broadcast(UObject* WorldContextObject,const FAIMessage& Message)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "ClearFlag(uint8 Flag)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "HasFlag(uint8 Flag)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "Send(AController* Controller,const FAIMessage& Message)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "Send(APawn* Pawn,const FAIMessage& Message)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "Send(UBrainComponent* BrainComp,const FAIMessage& Message)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "SetFlag(uint8 Flag)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessage\n",
+        "Name": "SetFlags(uint8 Flags)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "Create(AController* Controller,FName MessageType,FOnAIMessage const& Delegate)",
+        "Type": "FAIMessageObserverHandle",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "Create(APawn* Pawn,FName MessageType,FOnAIMessage const& Delegate)",
+        "Type": "FAIMessageObserverHandle",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "Create(UBrainComponent* BrainComp,FName MessageType,FOnAIMessage const& Delegate)",
+        "Type": "FAIMessageObserverHandle",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "Create(AController* Controller,FName MessageType,FAIRequestID MessageID,FOnAIMessage const& Delegate)",
+        "Type": "FAIMessageObserverHandle",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "Create(APawn* Pawn,FName MessageType,FAIRequestID MessageID,FOnAIMessage const& Delegate)",
+        "Type": "FAIMessageObserverHandle",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "Create(UBrainComponent* BrainComp,FName MessageType,FAIRequestID MessageID,FOnAIMessage const& Delegate)",
+        "Type": "FAIMessageObserverHandle",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "DescribeObservedMessage()",
+        "Type": "FString",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "GetObservedMessageID()",
+        "Type": "FAIRequestID",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "GetObservedMessageType()",
+        "Type": "FName",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "IsObservingMessageID()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nFAIMessageObserver\n",
+        "Name": "OnMessage(const FAIMessage& Message)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "AcceptanceRadius",
+        "Type": "float",
+        "Description": "Pathfollowing: required distance to goal to complete move"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "bAllowPartialPath",
+        "Type": "uint32:  1",
+        "Description": "Pathfinding: allow using incomplete path going toward goal but not reaching it"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "bCanStrafe",
+        "Type": "uint32:  1",
+        "Description": "Pathfollowing: keep focal point at move goal"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "bInitialized",
+        "Type": "uint32:  1",
+        "Description": "Move goal is an actor"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "bMoveToActor",
+        "Type": "uint32:  1",
+        "Description": "Move goal is an actor"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "bProjectGoalOnNavigation",
+        "Type": "uint32:  1",
+        "Description": "Pathfinding: goal location will be projected on navigation data before use"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "bReachTestIncludesAgentRadius",
+        "Type": "uint32:  1",
+        "Description": "Pathfollowing: acceptance radius needs to be increased by agent radius (stop on overlap vs exact point)"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "bReachTestIncludesGoalRadius",
+        "Type": "uint32:  1",
+        "Description": "Pathfollowing: acceptance radius needs to be increased by goal actor radius"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "bUsePathfinding",
+        "Type": "uint32:  1",
+        "Description": "Pathfinding: if set - regular pathfinding will be used, if not - direct path between two points"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "FilterClass",
+        "Type": "TSubclassOf",
+        "Description": "Pathfinding: navigation filter to use"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GoalActor",
+        "Type": "AActor *",
+        "Description": "Move goal: actor"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GoalLocation",
+        "Type": "FVector",
+        "Description": "Move goal: location"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "UserData",
+        "Type": "FCustomMoveSharedPtr",
+        "Description": "Custom user data: structure"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "UserFlags",
+        "Type": "int32",
+        "Description": "Custom user data: flags"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "CanStrafe()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GetAcceptanceRadius()",
+        "Type": "float",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GetDestination()",
+        "Type": "FVector",
+        "Description": "Retrieves request's requested destination location, GoalActor's location or GoalLocation, depending on the request itself"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GetGoalActor()",
+        "Type": "AActor *",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GetGoalLocation()",
+        "Type": "FVector",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GetNavigationFilter()",
+        "Type": "TSubclassOf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GetUserData()",
+        "Type": "FCustomMoveSharedPtr",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "GetUserFlags()",
+        "Type": "int32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "IsMoveToActorRequest()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "IsProjectingGoal()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "IsReachTestIncludingAgentRadius()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "IsReachTestIncludingGoalRadius()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "IsUsingPartialPaths()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "IsUsingPathfinding()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "IsValid()",
+        "Type": "bool",
+        "Description": "The request should be either set up to move to a location, of go to a valid actor"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetAcceptanceRadius(float Radius)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetAllowPartialPath(bool bAllowPartial)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetCanStrafe(bool bStrafe)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetGoalActor(const AActor* InGoalActor)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetGoalLocation(const FVector& InGoalLocation)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetNavigationFilter(TSubclassOf< UNavigationQueryFilter...)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetProjectGoalLocation(bool bProject)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetReachTestIncludesAgentRadius(bool bIncludeRadius)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetReachTestIncludesGoalRadius(bool bIncludeRadius)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetUsePathfinding(bool bPathfinding)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetUserData(const FCustomMoveSharedPtr& InUser...)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetUserFlags(int32 InUserFlags)",
+        "Type": "FAIMoveRequest",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "ToString()",
+        "Type": "FString",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "UpdateGoalLocation(const FVector& NewLocation)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "CanStopOnOverlap()",
+        "Type": "bool",
+        "Description": "This function is deprecated, please use IsReachTestIncludingAgentRadius instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIMoveRequest\n",
+        "Name": "SetStopOnOverlap(bool bStop)",
+        "Type": "FAIMoveRequest",
+        "Description": "This function is deprecated, please use SetReachTestIncludesAgentRadius instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAINamedID\n",
+        "Name": "Index",
+        "Type": "const TCounter:...",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAINamedID\n",
+        "Name": "Name",
+        "Type": "const FName",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAINamedID\n",
+        "Name": "GetCounter()",
+        "Type": "TCounter &",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAINamedID\n",
+        "Name": "GetSize()",
+        "Type": "uint32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAINamedID\n",
+        "Name": "InvalidID()",
+        "Type": "FAINamedID",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAINamedID\n",
+        "Name": "IsValid()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAINamedID\n",
+        "Name": "operator typename TCounter::Type()",
+        "Type": "",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAINamedID\n",
+        "Name": "operator=(const FAINamedID& Other)",
+        "Type": "FAINamedID &",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIRequestID\n",
+        "Name": "GetID()",
+        "Type": "uint32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIRequestID\n",
+        "Name": "IsEquivalent(uint32 OtherID)",
+        "Type": "bool",
+        "Description": "Returns true if given ID is identical to stored ID or any of considered IDs is FAIRequestID::AnyRequest"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIRequestID\n",
+        "Name": "IsEquivalent(FAIRequestID Other)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIRequestID\n",
+        "Name": "IsValid()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIRequestID\n",
+        "Name": "ToString()",
+        "Type": "FString",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIRequestID\n",
+        "Name": "operator uint32()",
+        "Type": "",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIRequestID\n",
+        "Name": "operator=(uint32 OtherID)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "ClearLock(EAIRequestPriority::Type LockPriori...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "ForceClearAllLocks()",
+        "Type": "void",
+        "Description": "Force-clears all locks"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "GetLockPriorityName()",
+        "Type": "FString",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "IsAvailableFor(EAIRequestPriority::Type LockPriori...)",
+        "Type": "bool",
+        "Description": "Answers the question if given priority is allowed to use this resource."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "IsLocked()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "IsLockedBy(EAIRequestPriority::Type LockPriori...)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "SetLock(EAIRequestPriority::Type LockPriori...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "SetUseResourceLockCount(bool inUseResourceLockCount)",
+        "Type": "void",
+        "Description": "Set whether we should use resource lock count. clears all existing locks."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "operator+=(const FAIResourceLock& Other)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourceLock\n",
+        "Name": "operator==(const FAIResourceLock& Other)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourcesSet\n",
+        "Name": "AddResource(const FAIResourceID& Resource)",
+        "Type": "FAIResourcesSet",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourcesSet\n",
+        "Name": "AddResourceIndex(uint8 ResourceIndex)",
+        "Type": "FAIResourcesSet",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourcesSet\n",
+        "Name": "Clear()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourcesSet\n",
+        "Name": "ContainsResource(const FAIResourceID& Resource)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourcesSet\n",
+        "Name": "ContainsResourceIndex(uint8 ResourceID)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourcesSet\n",
+        "Name": "IsEmpty()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourcesSet\n",
+        "Name": "RemoveResource(const FAIResourceID& Resource)",
+        "Type": "FAIResourcesSet",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFAIResourcesSet\n",
+        "Name": "RemoveResourceIndex(uint8 ResourceIndex)",
+        "Type": "FAIResourcesSet",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIController.h\"",
+        "ClassName": "\nFFocusKnowledge\n",
+        "Name": "Priorities",
+        "Type": "TArray",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GenericTeamAgentInterface.h\"",
+        "ClassName": "\nFGenericTeamId\n",
+        "Name": "TeamID",
+        "Type": "uint8",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GenericTeamAgentInterface.h\"",
+        "ClassName": "\nFGenericTeamId\n",
+        "Name": "GetAttitude(const AActor* A,const AActor* B)",
+        "Type": "ETeamAttitude::Type",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GenericTeamAgentInterface.h\"",
+        "ClassName": "\nFGenericTeamId\n",
+        "Name": "GetAttitude(FGenericTeamId TeamA,FGenericTeamId TeamB)",
+        "Type": "ETeamAttitude::Type",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GenericTeamAgentInterface.h\"",
+        "ClassName": "\nFGenericTeamId\n",
+        "Name": "GetId()",
+        "Type": "uint8",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GenericTeamAgentInterface.h\"",
+        "ClassName": "\nFGenericTeamId\n",
+        "Name": "GetTeamIdentifier(const AActor* TeamMember)",
+        "Type": "FGenericTeamId",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GenericTeamAgentInterface.h\"",
+        "ClassName": "\nFGenericTeamId\n",
+        "Name": "ResetAttitudeSolver()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GenericTeamAgentInterface.h\"",
+        "ClassName": "\nFGenericTeamId\n",
+        "Name": "SetAttitudeSolver(const FAttitudeSolverFunction& Sol...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GenericTeamAgentInterface.h\"",
+        "ClassName": "\nFGenericTeamId\n",
+        "Name": "operator uint8()",
+        "Type": "",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "Graph",
+        "Type": "const TGraph &",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "NodePool",
+        "Type": "FNodePool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "NodeSorter",
+        "Type": "FNodeSorter",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "OpenList",
+        "Type": "FOpenList",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "FindPath(const FSearchNode& StartNode,const FSearchNode& EndNode,const TQueryFilter& Filter,TResultPathInfo& OutPath)",
+        "Type": "EGraphAStarResult",
+        "Description": "Performs the actual search."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "FloodFrom(const FSearchNode& StartNode,const TQueryFilter& Filter)",
+        "Type": "EGraphAStarResult",
+        "Description": "Floods node pool until running out of either free nodes or open set"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetCostLimit(const TemplateClass& Obj)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetCostLimit(const TemplateClass& Obj)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetHeuristicCost(const TemplateClass& Obj,const FSearchNode& Param1,const FSearchNode& Param2)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetHeuristicCost(const TemplateClass& Obj,const FSearchNode& Param1,const FSearchNode& Param2)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetNeighbour(const TemplateClass& Obj,const FSearchNode& Param1,const int32 Param2)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetNeighbour(const TemplateClass& Obj,const FSearchNode& Param1,const int32 Param2)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetNeighbourCount(const TemplateClass& Obj,const FGraphNodeRef Param1)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetNeighbourCount(const TemplateClass& Obj,const FGraphNodeRef Param1)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetTraversalCost(const TemplateClass& Obj,const FSearchNode& Param1,const FSearchNode& Param2)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "GetTraversalCost(const TemplateClass& Obj,const FSearchNode& Param1,const FSearchNode& Param2)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "HasExceededCostLimit(const TemplateClass& Obj,float Cost)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "HasExceededCostLimit(const TemplateClass& Obj,float Cost)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "HasReachMaxSearchNodes(const TQueryFilter& Filter)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "HasReachMaxSearchNodes(const TemplateClass& Obj,uint32 NodeCount)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "HasReachMaxSearchNodes(const TemplateClass& Obj,uint32 NodeCount)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "ProcessSingleNode(const FSearchNode& EndNode,const bool bIsBound,const TQueryFilter& Filter,int32& OutBestNodeIndex,float& OutBestNodeCost)",
+        "Type": "bool",
+        "Description": "Single run of A* loop: get node from open set and process neighbors returns true if loop should be continued"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "SetPathInfo(TemplateClass& Obj,const int32 Param1,const FSearchNode& Param2)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "SetPathInfo(TemplateClass& Obj,const int32 Param1,const FSearchNode& Param2)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "ShouldIgnoreClosedNodes(const TemplateClass& Obj)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "ShouldIgnoreClosedNodes(const TemplateClass& Obj)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "ShouldIncludeStartNodeInPath(const TemplateClass& Obj)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStar\n",
+        "Name": "ShouldIncludeStartNodeInPath(const TemplateClass& Obj)",
+        "Type": "TEnableIf",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "bIsClosed",
+        "Type": "uint8:  1",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "bIsOpened",
+        "Type": "uint8:  1",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "NodeRef",
+        "Type": "FGraphNodeRef",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "ParentNodeIndex",
+        "Type": "int32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "ParentRef",
+        "Type": "FGraphNodeRef",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "SearchNodeIndex",
+        "Type": "int32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "TotalCost",
+        "Type": "float",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "TraversalCost",
+        "Type": "float",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "IsClosed()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "IsOpened()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "MarkClosed()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "MarkNotClosed()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "MarkNotOpened()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"GraphAStar.h\"",
+        "ClassName": "\nFGraphAStarDefaultNode\n",
+        "Name": "MarkOpened()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nFGridSize2D\n",
+        "Name": "Height",
+        "Type": "uint32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nFGridSize2D\n",
+        "Name": "Width",
+        "Type": "uint32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFIntervalCountdown\n",
+        "Name": "Interval",
+        "Type": "float",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFIntervalCountdown\n",
+        "Name": "TimeLeft",
+        "Type": "float",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFIntervalCountdown\n",
+        "Name": "GetElapsedTime()",
+        "Type": "float",
+        "Description": "That this function returns meaningful results only if Interval > 0"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFIntervalCountdown\n",
+        "Name": "GetElapsedTimeWithFallback(const float FallbackValue)",
+        "Type": "float",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFIntervalCountdown\n",
+        "Name": "Reset()",
+        "Type": "void",
+        "Description": "Resets the countdown back to Interval"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFIntervalCountdown\n",
+        "Name": "Set(const float InNewTimeLeft)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AITypes.h\"",
+        "ClassName": "\nFIntervalCountdown\n",
+        "Name": "Tick(const float TimeDelta)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"VisualLoggerExtension.h\"",
+        "ClassName": "\nFVisualLoggerExtension\n",
+        "Name": "CurrentTimestamp",
+        "Type": "float",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"VisualLoggerExtension.h\"",
+        "ClassName": "\nFVisualLoggerExtension\n",
+        "Name": "EQSRenderingComponents",
+        "Type": "TArray",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"VisualLoggerExtension.h\"",
+        "ClassName": "\nFVisualLoggerExtension\n",
+        "Name": "SelectedEQSId",
+        "Type": "uint32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"VisualLoggerExtension.h\"",
+        "ClassName": "\nFVisualLoggerExtension\n",
+        "Name": "DrawData(IVisualLoggerEditorInterface* ...,UCanvas* Canvas)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"VisualLoggerExtension.h\"",
+        "ClassName": "\nFVisualLoggerExtension\n",
+        "Name": "OnItemsSelectionChanged(IVisualLoggerEditorInterface* ...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"VisualLoggerExtension.h\"",
+        "ClassName": "\nFVisualLoggerExtension\n",
+        "Name": "OnLogLineSelectionChanged(IVisualLoggerEditorInterface* ...,TSharedPtr< struct FLogEntryItem > ...,int64 UserData)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"VisualLoggerExtension.h\"",
+        "ClassName": "\nFVisualLoggerExtension\n",
+        "Name": "ResetData(IVisualLoggerEditorInterface* ...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIModule.h\"",
+        "ClassName": "\nIAIModule\n",
+        "Name": "Get()",
+        "Type": "IAIModule &",
+        "Description": "Singleton-like access to this module's interface."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIModule.h\"",
+        "ClassName": "\nIAIModule\n",
+        "Name": "GetAIAssetCategoryBit()",
+        "Type": "EAssetTypeCategories::Type",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AIModule.h\"",
+        "ClassName": "\nIAIModule\n",
+        "Name": "IsAvailable()",
+        "Type": "bool",
+        "Description": "Checks to see if this module is loaded and ready."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "CalcElementBounds(const FElement&)",
+        "Type": "FBox",
+        "Description": "You have to supply this yourself"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "CalcNodeBounds(const TArray< FElementBox >& Eleme...,const int StartIndex,const int LimitIndex)",
+        "Type": "FBox",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "Create(TArray< FElement >&& InElements)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "Create(const TArray< FElement >& InElemen...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "CreateCommonInternal()",
+        "Type": "void",
+        "Description": "Assumes Elements has been set up"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "GetBoundingBoxes()",
+        "Type": "TArray",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "GetElements()",
+        "Type": "TArray",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "GetLongestAxis(const FBox& NodeBounds)",
+        "Type": "int",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "GetNodes()",
+        "Type": "TArray",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "GetOverlapping(const FBox& Box,TArray< FElement >& OutOverlapping...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "IsEmpty()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "RecreateTree(const TArray< FElement >& InElemen...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "RecreateTree(TArray< FElement >&& InElements)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "Reset()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BVTree.h\"",
+        "ClassName": "\nTBVTree\n",
+        "Name": "Subdivide(TArray< FElementBox >& ElementBBox...,const int StartIndex,const int LimitIndex,int& CurrentNode)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"DefaultManagerInstanceTracker.h\"",
+        "ClassName": "\nTDefaultManagerInstanceTracker\n",
+        "Name": "bCreateIfMissing",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"DefaultManagerInstanceTracker.h\"",
+        "ClassName": "\nTDefaultManagerInstanceTracker\n",
+        "Name": "WorldToInstanceMap",
+        "Type": "TMap",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"DefaultManagerInstanceTracker.h\"",
+        "ClassName": "\nTDefaultManagerInstanceTracker\n",
+        "Name": "GetManagerInstance(UWorld& World)",
+        "Type": "FManager \u0004...",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"DefaultManagerInstanceTracker.h\"",
+        "ClassName": "\nTDefaultManagerInstanceTracker\n",
+        "Name": "OnWorldCleanup(UWorld* World,bool,bool)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "BoundsSize",
+        "Type": "FVector",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "Cells",
+        "Type": "TArray",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "CellSize",
+        "Type": "uint32",
+        "Description": "DEPRECATED, use GridCellSize instead of this."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GridCellSize",
+        "Type": "float",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GridSize",
+        "Type": "FGridSize2D",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "Origin",
+        "Type": "FVector",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "WorldBounds",
+        "Type": "FBox",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "AllocateMemory()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "CleanUp()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "FreeMemory()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetAllocatedSize()",
+        "Type": "uint32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellAtIndexUnsafe(int32 CellIndex)",
+        "Type": "FCellType",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellAtIndexUnsafe(int32 CellIndex)",
+        "Type": "FCellType &",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellAtWorldLocation(const FVector& WorldLocation)",
+        "Type": "FCellType",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellAtWorldLocationUnsafe(const FVector& WorldLocation)",
+        "Type": "FCellType",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellCoords(const FVector& WorldLocation)",
+        "Type": "FIntVector",
+        "Description": "Convert world location to (X,Y) coords on grid, result is clamped to grid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellCoords(int32 CellIndex)",
+        "Type": "FIntVector",
+        "Description": "Convert cell index to (X,Y) coords on grid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellCoordsUnsafe(const FVector& WorldLocation)",
+        "Type": "FIntVector",
+        "Description": "Convert world location to (X,Y) coords on grid, result can be outside grid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellCoordX(int32 CellIndex)",
+        "Type": "int32",
+        "Description": "Convert cell index to coord X on grid, result can be invalid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellCoordY(int32 CellIndex)",
+        "Type": "int32",
+        "Description": "Convert cell index to coord Y on grid, result can be invalid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellIndex(int32 LocationX,int32 LocationY)",
+        "Type": "int32",
+        "Description": "Convert (X,Y) coords on grid to cell index, returns -1 for position outside grid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellIndex(const FVector& WorldLocation)",
+        "Type": "int32",
+        "Description": "Convert world location to cell index, returns -1 for position outside grid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellIndexUnsafe(const FVector& WorldLocation)",
+        "Type": "int32",
+        "Description": "Convert world location to cell index, result can be invalid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellIndexUnsafe(int32 LocationX,int32 LocationY)",
+        "Type": "int32",
+        "Description": "Convert (X,Y) coords on grid to cell index, result can be invalid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellIndexUnsafe(const FIntVector& CellCoords)",
+        "Type": "int32",
+        "Description": "Convert (X,Y) coords on grid to cell index, result can be invalid"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellsCount()",
+        "Type": "int32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetWorldCellBox(int32 CellIndex)",
+        "Type": "FBox",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetWorldCellBox(int32 LocationX,int32 LocationY)",
+        "Type": "FBox",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetWorldCellCenter(int32 CellIndex)",
+        "Type": "FVector",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetWorldCellCenter(int32 LocationX,int32 LocationY)",
+        "Type": "FVector",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "Init(float InCellSize,const FBox& Bounds)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "IsValid()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "IsValidCoord(const FIntVector& CellCoords)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "IsValidCoord(int32 LocationX,int32 LocationY)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "IsValidIndex(const int32 CellIndex)",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "Num()",
+        "Type": "int32",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "Serialize(FArchive& Ar)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "UpdateWorldBounds()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "Zero()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "operator[](int32 CellIndex)",
+        "Type": "FCellType &",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "operator[](int32 CellIndex)",
+        "Type": "FCellType",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "CellCoordsToCellIndex(const int32 LocationX,const int32 LocationY)",
+        "Type": "uint32",
+        "Description": "This function is now deprecated, please use GetCellIndex instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "CellIndexToCoords(uint32 CellIndex,uint32& LocationX,uint32& LocationY)",
+        "Type": "FIntVector",
+        "Description": "This function is now deprecated, please use GetCellCoords instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "CellIndexToCoords(uint32 CellIndex)",
+        "Type": "FIntVector",
+        "Description": "This function is now deprecated, please use GetCellCoords instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetCellAtWorldLocationSafe(const FVector& WorldLocation)",
+        "Type": "FCellType",
+        "Description": "This function is now deprecated, please use GetCellAtWorldLocation instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "GetValuesMemorySize()",
+        "Type": "uint32",
+        "Description": "This function is now deprecated, please use GetAllocatedSize instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "Init(uint32 InCellSize,const FBox& Bounds)",
+        "Type": "void",
+        "Description": "This function is now deprecated, please use the one with float CellSize argument"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "IsValidCellIndex(const int32 CellIndex)",
+        "Type": "bool",
+        "Description": "This function is now deprecated, please use IsValidIndex instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "WorldToCellCoords(const FVector& WorldLocation)",
+        "Type": "FIntVector",
+        "Description": "This function is now deprecated, please use GetCellCoords instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "WorldToCellCoords(const FVector& WorldLocation,uint32& LocationX,uint32& LocationY)",
+        "Type": "void",
+        "Description": "This function is now deprecated, please use GetCellCoords instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"SimpleCellGrid.h\"",
+        "ClassName": "\nTSimpleCellGrid\n",
+        "Name": "WorldToCellIndex(const FVector& WorldLocation)",
+        "Type": "uint32",
+        "Description": "This function is now deprecated, please use GetCellIndex instead."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISubsystem.h\"",
+        "ClassName": "\nUAISubsystem\n",
+        "Name": "GetWorld()",
+        "Type": "UWorld *",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISubsystem.h\"",
+        "ClassName": "\nUAISubsystem\n",
+        "Name": "GetWorldFast()",
+        "Type": "UWorld *",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISubsystem.h\"",
+        "ClassName": "\nUAISubsystem\n",
+        "Name": "GetTickableGameObjectWorld()",
+        "Type": "UWorld *",
+        "Description": "FTickableGameObject begin."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISubsystem.h\"",
+        "ClassName": "\nUAISubsystem\n",
+        "Name": "GetStatId()",
+        "Type": "TStatId",
+        "Description": "Return the stat id to use for this tickable"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISubsystem.h\"",
+        "ClassName": "\nUAISubsystem\n",
+        "Name": "GetTickableTickType()",
+        "Type": "ETickableTickType",
+        "Description": "Virtual that can be overloaded by the inheriting class."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISubsystem.h\"",
+        "ClassName": "\nUAISubsystem\n",
+        "Name": "Tick(float DeltaTime)",
+        "Type": "void",
+        "Description": "Pure virtual that must be overloaded by the inheriting class."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "AcceptanceRadius",
+        "Type": "float",
+        "Description": "Default AI movement's acceptance radius used to determine whether AI reached path's end"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "ActorSpawnedDelegateHandle",
+        "Type": "FDelegateHandle",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "AllProxyObjects",
+        "Type": "TArray",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "bAcceptPartialPaths",
+        "Type": "bool",
+        "Description": "Sets default value for rather move tasks accept partial paths or not"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "bAddBlackboardSelfKey",
+        "Type": "bool",
+        "Description": "If set to true will result in automatically adding the SelfActor key to new Blackboard assets."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "bAllowControllersAsEQSQuerier",
+        "Type": "bool",
+        "Description": "If enable will make EQS not complaint about using Controllers as queriers."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "bAllowStrafing",
+        "Type": "bool",
+        "Description": "Sets default value for rather move tasks allow strafing or not"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "BehaviorTreeManager",
+        "Type": "UBehaviorTreeManager",
+        "Description": "Behavior tree manager used by game"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "bEnableBTAITasks",
+        "Type": "bool",
+        "Description": "Whether or not to enable Gameplay Tasks for move tasks this property is just a transition-time flag - in the end we're going to switch over to Gameplay Tasks anyway, that's the goal."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "bEnableDebuggerPlugin",
+        "Type": "bool",
+        "Description": "If set, GameplayDebuggerPlugin will be loaded on module's startup"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "bFinishMoveOnGoalOverlap",
+        "Type": "bool",
+        "Description": "If true, overlapping the goal will be counted by default as finishing a move"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "bForgetStaleActors",
+        "Type": "bool",
+        "Description": "If set, actors will be forgotten by the perception system when their stimulus has expired."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "BlackboardDataToComponentsMap",
+        "Type": "FBlackboardDataToComponentsMap",
+        "Description": "UBlackboardComponent instances that reference the blackboard data definition"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "DefaultSightCollisionChannel",
+        "Type": "TEnumAsByte",
+        "Description": "Which collision channel to use for sight checks by default"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "EnvironmentQueryManager",
+        "Type": "UEnvQueryManager",
+        "Description": "Environment query manager used by game"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "HotSpotManager",
+        "Type": "UAIHotSpotManager",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "HotSpotManagerClassName",
+        "Type": "FSoftClassPath",
+        "Description": "Class that will be used to spawn the hot spot manager, can be game-specific"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "NavLocalGrids",
+        "Type": "UNavLocalGridManager",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "PathfollowingNavLinkAcceptanceRadius",
+        "Type": "float",
+        "Description": "Similarly to PathfollowingRegularPathPointAcceptanceRadius used by pathfollowing's internals but gets applied only when next point on a path represents a begining of navigation link"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "PathfollowingRegularPathPointAcceptanceRadius",
+        "Type": "float",
+        "Description": "Value used for pathfollowing's internal code to determine whether AI reached path's point."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "PerceptionSystem",
+        "Type": "UAIPerceptionSystem",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "PerceptionSystemClassName",
+        "Type": "FSoftClassPath",
+        "Description": "Class that will be used to spawn the perception system, can be game-specific"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "AddReferenceFromProxyObject(UAIAsyncTaskBlueprintProxy* Bl...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "AIIgnorePlayers()",
+        "Type": "void",
+        "Description": "Cheats"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "AILoggingVerbose()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "ConditionalLoadDebuggerPlugin()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "CreateBlackboardDataToComponentsIterator(UBlackboardData& BlackboardAsset)",
+        "Type": "FBlackboardDataToComponentsIterator",
+        "Description": "Creates a forward only iterator for that will iterate all UBlackboardComponent instances that reference the specified BlackboardAsset and it's parents."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetBehaviorTreeManager()",
+        "Type": "UBehaviorTreeManager",
+        "Description": "Behavior tree manager const getter"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetBehaviorTreeManager()",
+        "Type": "UBehaviorTreeManager",
+        "Description": "Behavior tree manager getter"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetCurrent(UWorld& World)",
+        "Type": "UAISystem",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetCurrentSafe(UWorld* World)",
+        "Type": "UAISystem",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetEnvironmentQueryManager()",
+        "Type": "UEnvQueryManager",
+        "Description": "Environment Query manager const getter"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetEnvironmentQueryManager()",
+        "Type": "UEnvQueryManager",
+        "Description": "Environment Query manager getter"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetHotSpotManager()",
+        "Type": "UAIHotSpotManager",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetHotSpotManager()",
+        "Type": "UAIHotSpotManager",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetNavLocalGridManager()",
+        "Type": "UNavLocalGridManager",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetNavLocalGridManager()",
+        "Type": "UNavLocalGridManager",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetOuterWorld()",
+        "Type": "UWorld *",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetPerceptionSystem()",
+        "Type": "UAIPerceptionSystem",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetPerceptionSystem()",
+        "Type": "UAIPerceptionSystem",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetRandomStream()",
+        "Type": "FRandomStream",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "GetWorld()",
+        "Type": "UWorld *",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "LoadDebuggerPlugin()",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "OnActorSpawned(AActor* SpawnedActor)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "RegisterBlackboardComponent(UBlackboardData& BlackboardAsset,UBlackboardComponent& BlackboardCo...)",
+        "Type": "void",
+        "Description": "Registers a UBlackboardComponent instance with this blackboard data asset."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "RemoveReferenceToProxyObject(UAIAsyncTaskBlueprintProxy* Bl...)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "RunEQS(const FString& QueryName,UObject* Target)",
+        "Type": "void",
+        "Description": "Insta-runs EQS query for given Target"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "SeedRandomStream(const int32 Seed)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "UnregisterBlackboardComponent(UBlackboardData& BlackboardAsset,UBlackboardComponent& BlackboardCo...)",
+        "Type": "void",
+        "Description": "Unregisters a UBlackboardComponent instance with this blackboard data asset."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "CleanupWorld(bool bSessionEnded,bool bCleanupResources,UWorld* NewWorld)",
+        "Type": "void",
+        "Description": "Called by UWorld::CleanupWorld."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "InitializeActorsForPlay(bool bTimeGotReset)",
+        "Type": "void",
+        "Description": "UAISystemBase begin."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "StartPlay()",
+        "Type": "void",
+        "Description": "Called by UWorld::BeginPlay to indicate the gameplay has started."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "WorldOriginLocationChanged(FIntVector OldOriginLocation,FIntVector NewOriginLocation)",
+        "Type": "void",
+        "Description": "Event called on world origin location changes"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "BeginDestroy()",
+        "Type": "void",
+        "Description": "Called before destroying the object."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"AISystem.h\"",
+        "ClassName": "\nUAISystem\n",
+        "Name": "PostInitProperties()",
+        "Type": "void",
+        "Description": "Called after the C++ constructor and after the properties have been initialized, including those loaded from config."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "AIOwner",
+        "Type": "AAIController",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "BlackboardComp",
+        "Type": "UBlackboardComponent",
+        "Description": "Blackboard component"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "MessageObservers",
+        "Type": "TArray",
+        "Description": "Active message observers"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "MessagesToProcess",
+        "Type": "TArray",
+        "Description": "This is a temp contraption to implement delayed messages delivering until proper AI messaging is implemented"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "ResourceLock",
+        "Type": "FAIResourceLock",
+        "Description": "Used to keep track of which subsystem requested this AI resource be locked"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "CacheBlackboardComponent(UBlackboardComponent* BBComp)",
+        "Type": "void",
+        "Description": "END UActorComponent overrides caches BlackboardComponent's pointer to be used with this brain component"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "Cleanup()",
+        "Type": "void",
+        "Description": "AI logic won't be needed anymore, stop all activity and run cleanup"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "DescribeSelfToVisLog(FVisualLogEntry* Snapshot)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "GetAIOwner()",
+        "Type": "AAIController",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "GetBlackboardComponent()",
+        "Type": "UBlackboardComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "GetBlackboardComponent()",
+        "Type": "UBlackboardComponent",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "GetDebugInfoString()",
+        "Type": "FString",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "HandleMessage(const FAIMessage& Message)",
+        "Type": "void",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "IsPaused()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "IsRunning()",
+        "Type": "bool",
+        "Description": ""
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "PauseLogic(const FString& Reason)",
+        "Type": "void",
+        "Description": "Pause logic and blackboard updates."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "RequestLogicRestartOnUnlock()",
+        "Type": "void",
+        "Description": "To be called in case we want to restart AI logic while it's still being locked."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "RestartLogic()",
+        "Type": "void",
+        "Description": "Restarts currently running or previously ran brain logic."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "ResumeLogic(const FString& Reason)",
+        "Type": "EAILogicResuming::Type",
+        "Description": "Resumes paused brain logic. MUST be called by child implementations!"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "StartLogic()",
+        "Type": "void",
+        "Description": "Starts brain logic. If brain is already running, will not do anything."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "StopLogic(const FString& Reason)",
+        "Type": "void",
+        "Description": "Stops currently running brain logic."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "InitializeComponent()",
+        "Type": "void",
+        "Description": "BEGIN UActorComponent overrides"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "OnRegister()",
+        "Type": "void",
+        "Description": "Called when a component is registered, after Scene is set, but before CreateRenderState_Concurrent or OnCreatePhysicsState are called."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "TickComponent(float DeltaTime,enum ELevelTick TickType,FActorComponentTickFunction* T...)",
+        "Type": "void",
+        "Description": "Function called every frame on this ActorComponent."
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "ClearResourceLock(EAIRequestPriority::Type LockSource)",
+        "Type": "void",
+        "Description": "Clear resource lock of the given origin"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "ForceUnlockResource()",
+        "Type": "void",
+        "Description": "Force-clears all locks on resource"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "IsResourceLocked()",
+        "Type": "bool",
+        "Description": "Check whether resource is currently locked"
+    },
+    {
+        "Module": "AIModule",
+        "HeaderPath": "#include \"BrainComponent.h\"",
+        "ClassName": "\nUBrainComponent\n",
+        "Name": "LockResource(EAIRequestPriority::Type LockSource)",
+        "Type": "void",
+        "Description": "If resource is lockable lock it with indicated priority"
+    }
+]
